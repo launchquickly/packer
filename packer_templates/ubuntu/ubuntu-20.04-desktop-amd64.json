@@ -89,6 +89,7 @@
         "{{template_dir}}/scripts/desktop.sh",
         "{{template_dir}}/scripts/vagrant.sh",
         "{{template_dir}}/../_common/virtualbox.sh",
+        "{{template_dir}}/scripts/cleanup-desktop.sh",
         "{{template_dir}}/../_common/minimize.sh"
       ],
       "type": "shell"
@@ -107,7 +108,7 @@
     "https_proxy": "{{env `https_proxy`}}",
     "guest_additions_url": "",
     "iso_checksum_type": "sha256",
-    "iso_name": "focal-server-amd64.iso",
+    "iso_name": "focal-legacy-server-amd64.iso",
     "memory": "1024",
     "mirror": "http://cdimage.ubuntu.com",
     "mirror_directory": "ubuntu-server/daily/current",
