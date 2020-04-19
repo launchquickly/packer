@@ -1,21 +1,21 @@
 #!/bin/sh -eux
 
-bento='
-This system is built by the Bento project by Chef Software
-More information can be found at https://github.com/chef/bento'
+launchquickly='
+This system is built by the Packer project by Launchquickly Ltd
+More information can be found at https://github.com/launchquickly/packer'
 
 if [ -d /etc/update-motd.d ]; then
-    MOTD_CONFIG='/etc/update-motd.d/99-bento'
+    MOTD_CONFIG='/etc/update-motd.d/99-launchquickly'
 
-    cat >> "$MOTD_CONFIG" <<BENTO
+    cat >> "$MOTD_CONFIG" <<LAUNCHQUICKLY
 #!/bin/sh
 
 cat <<'EOF'
-$bento
+$launchquickly
 EOF
-BENTO
+LAUNCHQUICKLY
 
     chmod 0755 "$MOTD_CONFIG"
 else
-    echo "$bento" >> /etc/motd
+    echo "$launchquickly" >> /etc/motd
 fi
