@@ -64,11 +64,19 @@
         "vm_name": "{{ user `template` }}"
       }
     ],
-    "post-processors": [
-      {
-        "output": "{{ user `build_directory` }}/{{user `box_basename`}}.{{.Provider}}.box",
-        "type": "vagrant"
-      }
+    "post-processors": [ 
+      [
+        {
+          "output": "{{ user `build_directory` }}/{{user `box_basename`}}.{{.Provider}}.box",
+          "type": "vagrant"
+        },
+        {
+          "access_token": "{{user `cloud_token`}}",
+          "box_tag": "launchquickly/focal64",
+          "type": "vagrant-cloud",
+          "version": "{{user `version`}}"
+        }
+      ]
     ],
     "provisioners": [
       {
@@ -97,6 +105,7 @@
     "variables": {
       "box_basename": "ubuntu-20.04",
       "build_directory": "../../builds",
+      "cloud_token": "",
       "http_directory": "{{template_dir}}/http",
       "build_timestamp": "{{isotime \"20060102150405\"}}",
       "cpus": "1",
@@ -115,6 +124,6 @@
       "no_proxy": "{{env `no_proxy`}}",
       "preseed_path": "preseed.cfg",
       "template": "ubuntu-20.04-amd64",
-      "version": "TIMESTAMP"
+      "version": "0.0.1"
     }
   }
