@@ -65,10 +65,18 @@
     }
   ],
   "post-processors": [
-    {
-      "output": "{{ user `build_directory` }}/{{user `box_basename`}}.{{.Provider}}.box",
-      "type": "vagrant"
-    }
+    [
+      {
+        "output": "{{ user `build_directory` }}/{{user `box_basename`}}.{{.Provider}}.box",
+        "type": "vagrant"
+      },
+      {
+        "access_token": "{{user `cloud_token`}}",
+        "box_tag": "launchquickly/focal-desktop64",
+        "type": "vagrant-cloud",
+        "version": "{{user `version`}}"
+      }
+    ]
   ],
   "provisioners": [
     {
@@ -98,9 +106,10 @@
   "variables": {
     "box_basename": "ubuntu-desktop-20.04",
     "build_directory": "../../builds",
+    "cloud_token": "",
     "http_directory": "{{template_dir}}/http",
     "build_timestamp": "{{isotime \"20060102150405\"}}",
-    "cpus": "2",
+    "cpus": "1",
     "disk_size": "65536",
     "git_revision": "__unknown_git_revision__",
     "headless": "",
@@ -116,6 +125,6 @@
     "no_proxy": "{{env `no_proxy`}}",
     "preseed_path": "preseed.cfg",
     "template": "ubuntu-desktop-20.04-amd64",
-    "version": "TIMESTAMP"
+    "version": "0.0.1"
   }
 }
