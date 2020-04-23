@@ -1,4 +1,4 @@
 #!/bin/bash -eux
 
-apt-get install -y ubuntu-desktop
+apt-get install -y ubuntu-desktop-minimal
 reboot
