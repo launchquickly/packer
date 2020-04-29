@@ -1,3 +1,7 @@
+# Launchquickly
+
+All builds are based and derived from original Bento configurations and code. However, the purpose of this fork is to use the Bento codebase as a base to develop a limited number of boxes and therefore is likely to diverge extensively over time.
+
 # Bento
 
 [![Build status](https://badge.buildkite.com/2d56b8ca08562a7d17fd25920a2e02079c5e6f28cbc6d426ee.svg?branch=master)](https://buildkite.com/chef-oss/chef-bento-master-verify)
