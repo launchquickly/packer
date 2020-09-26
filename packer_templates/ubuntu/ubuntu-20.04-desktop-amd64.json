@@ -125,7 +125,7 @@
     "no_proxy": "{{env `no_proxy`}}",
     "preseed_path": "preseed.cfg",
     "template": "ubuntu-desktop-20.04-amd64",
-    "version": "0.0.5"
+    "version": "0.0.6"
   }
 }
 
